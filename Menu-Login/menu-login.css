@@ -175,76 +175,135 @@ main{
     transform: scale(1.1);
 }
 
+.bloq-login {
+    width: 55%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 7.5%;
+}
+
+.iniciar-sesion{
+    padding-bottom: .5em;
+}
+
+.bloq-login img{
+    max-width: 15%;
+    height: auto;
+    padding-bottom: 2em;
+}
+
+.bloq-login p{
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    font-size: 5.6vh;
+    color: #03045E;
+    padding-bottom: 1em;
+}
+
+.ingresar-datos{
+    display: flex;
+    flex-direction: column;
+    gap: .75em;
+    padding-bottom: 1em;
+}
+
+.ingresar-datos p{
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    font-size: 3.6vh;
+    color: #0077B6;
+    padding-bottom: 0.2em;
+}
+
+input{
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-width: .12em;
+    border-color: #0077B6;
+    width: 90%;
+    height: 2em;
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    font-size: 3.2vh;
+    background-color: transparent;
+    transition: .2s;
+}
+
+
+
+input:focus{
+    content: "";
+    outline: none;
+    border-color: #03045E;
+}
+
+input::placeholder{
+    color: #868E96;
+}
+
+input:focus::placeholder{
+    color: transparent;
+}
+
+button{
+    width: 20%;
+    height: 2em;
+    border-radius: .5em;
+    background-color: #0077B6;
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    font-size: 3.6vh;
+    color: #CAF0F8;
+    border-style: none;
+    transition: .5s ease-out;
+}
+
+button:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: #03045E;
+}
+
+
+
+
+
+.bloq-img p{
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    font-size: 5vh;
+    color: #03045E;
+    text-align: center;
+}
+
 .bloq-img {
-    width: 50%;
+    width: 33.333%;
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
     background-color: #CAF0F8;
 }
 
 
-.bloq-img .img-inicio {
+.bloq-img img {
+    padding: 1em;
     width: 100%;
     height: auto;
 }
 
-.bloq-login {
-    width: 50%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+.img-hotel {
+    max-width: 80%;
+  }
 
-.logo img {
-    width: 50%;
-}
+.img-stars {
+    max-width: 60%;
+  }
 
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.icono-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transition: transform 0.5s ease;
-    width: 50%;
-    text-decoration: none;
-
-}
-
-.icono-login:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
-.icono-login p {
-    font-family: 'Fira Code', monospace;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #0077B6;
-}
-
-.icono-login img {
-    width: 10em;
-}
-
-.icono{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.icono img{
-    width: 50%;
-    height: auto;
-}
 
 html, body {
     height: 100%;
