@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="menu-reservas.css">
+    <title>Hotel Paradise</title>
+</head>
+
+<body>
+    <main>
+
+        <section class="bloq-reserva">
+
+            <h1>SISTEMA DE RESERVAS</h1>
+
+            <br>
+            <section class="data-inputs">
+                <div class="datadiv">
+                    <h2>FECHA DE CHECK IN</h2>
+                    <div>
+                        <input type="date" name="date-check-in">
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="datadiv">
+                    <h2>FECHA DE CHECK OUT</h2>
+                    <div>
+                        <input type="date" name="date-check-out">
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="datadiv">
+                    <h2>VALOR</h2>
+                    <div>
+                        <input type="number" id="money" step="1" min="0" placeholder="$">
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="datadiv">
+                    <h2>FORMA DE PAGO</h2>
+                    <select id="paymethod">
+                        <option value="credit">Tarjeta de Crédito</option>
+                        <option value="debit">Tarjeta de Débito</option>
+                        <option value="cash">Dinero en Efectivo</option>
+                    </select>
+                </div>
+
+                <a class="button" href="">
+                    <button type="submit">SIGUIENTE</button> <!-- TIENE QUE CAMBIARSE A UN -->
+    
+                </a>
+
+            </section>
+
+        </section>
+
+        <section class="bloq-img">
+            <img class="logo" src="../Imagenes/logo circular completo.png" alt="Logo Hotel Paradise">
+            <img class="book" src="../Imagenes/book.png" alt="Reservas Hotel Paradise">
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Diseñado y Desarrollado por José Luis Garza Espinoza © 2023. </p>
+    </footer>
+
+</body>
+
+</html>
