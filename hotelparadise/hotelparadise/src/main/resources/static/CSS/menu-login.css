@@ -1,0 +1,336 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #FAF8F2;
+    overflow: hidden;
+    flex-direction: column;
+    /* Evita el desplazamiento vertical */
+
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #FAF8F2;
+    overflow: hidden;
+    flex: 1;
+    /* Evita el desplazamiento vertical */
+
+}
+
+.btn-salir {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+
+}
+
+.btn-salir img {
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn-salir img:hover {
+    transform: scale(1.1);
+}
+
+.bloq-login {
+    width: 55%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 7.5%;
+}
+
+.iniciar-sesion{
+    padding-bottom: .5em;
+}
+
+.bloq-login img{
+    max-width: 15%;
+    height: auto;
+    padding-bottom: 2em;
+}
+
+.bloq-login p{
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    font-size: 5.6vh;
+    color: #03045E;
+    padding-bottom: 1em;
+}
+
+.ingresar-datos{
+    display: flex;
+    flex-direction: column;
+    gap: .75em;
+    padding-bottom: 1em;
+}
+
+.ingresar-datos p{
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    font-size: 3.6vh;
+    color: #0077B6;
+    padding-bottom: 0.2em;
+}
+
+input{
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-width: .12em;
+    border-color: #0077B6;
+    width: 90%;
+    height: 2em;
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    font-size: 3.2vh;
+    background-color: transparent;
+    transition: .2s;
+}
+
+
+
+input:focus{
+    content: "";
+    outline: none;
+    border-color: #03045E;
+}
+
+input::placeholder{
+    color: #868E96;
+}
+
+input:focus::placeholder{
+    color: transparent;
+}
+
+button{
+    width: 20%;
+    height: 2em;
+    border-radius: .5em;
+    background-color: #0077B6;
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    font-size: 3.6vh;
+    color: #CAF0F8;
+    border-style: none;
+    transition: .5s ease-out;
+}
+
+button:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: #03045E;
+}
+
+
+
+
+
+.bloq-img p{
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    font-size: 5vh;
+    color: #03045E;
+    text-align: center;
+}
+
+.bloq-img {
+    width: 33.333%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #CAF0F8;
+}
+
+
+.bloq-img img {
+    padding: 1em;
+    width: 100%;
+    height: auto;
+}
+
+.img-hotel {
+    max-width: 80%;
+  }
+
+.img-stars {
+    max-width: 60%;
+  }
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    background-color: #0077B6;
+    padding: 2vh;
+    color: #FAF8F2;
+    text-align: center;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p{
+    font-family: 'Fira Code', monospace;
+    font-weight: 300;
+    font-size: 2vh;
+    color: #FAF8F2;
+    text-align: center;
+}
+
+
+
+
+
