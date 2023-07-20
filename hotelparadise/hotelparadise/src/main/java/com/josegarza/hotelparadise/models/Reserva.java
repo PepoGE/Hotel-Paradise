@@ -12,37 +12,32 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Table(name="reservas")
+@Table(name = "reservas")
 @Entity(name = "Reserva")
-@Getter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(of ="id")
+@EqualsAndHashCode(of = "id")
 public class Reserva {
 
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date fechaEntrada;
-	
+
 	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date fechaSalida;
-	
+
 	private float valor;
-	
+
 	@Enumerated(EnumType.STRING)
 	private FormaDePago formaDePago;
-	
-	
-	
-	
-	
-	
+
 }
