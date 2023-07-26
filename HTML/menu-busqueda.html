@@ -1,11 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Paradise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/menu-busqueda.css">
+
 </head>
+
 <body>
-    
+
+    <main>
+
+        <h1 class="header-title">SISTEMA DE BÚSQUEDA</h1>
+        <header>
+            <img src="../Imagenes/logo circular completo.png" alt="Logo Hotel Paradise">
+            <div class="input-group">
+                <input type="search">
+                <button type="submit">BUSCAR</button>
+            </div>
+        </header>
+
+
+        <section class="table">
+            <section class="table__header">
+                <div >
+                    <button class="btn__reservas" > <img src="../Imagenes/calendar-check (3).png">Registro de Reservas</button>
+                </div>
+                <div>
+                    <button class="btn__huespedes" > <img src="../Imagenes/buscar.png">Huéspedes</button>
+                </div>
+               
+            </section>
+            <section class="table__body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Fecha Check In <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Fecha Check Out <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Precio <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Tipo de Pago <span class="icon-arrow">&UpArrow;</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> 1 </td>
+                            <td> 17 Dec, 2022 </td>
+                            <td> 21 Dec, 2022 </td>
+                            <td> <strong> $128.90 </strong></td>
+                            <td class="type">
+                                <p class="tipo debito">Tarjeta de Debito</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 2 </td>
+                            <td> 17 Dec, 2022 </td>
+                            <td> 21 Dec, 2022 </td>
+                            <td> <strong> $128.90 </strong></td>
+                            <td class="type">
+                                <p class="tipo credito">Tarjeta de Credito</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 3 </td>
+                            <td> 17 Dec, 2022 </td>
+                            <td> 21 Dec, 2022 </td>
+                            <td> <strong> $128.90 </strong></td>
+                            <td class="type">
+                                <p class="tipo efectivo">Pago en Efectivo</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 4 </td>
+                            <td> 17 Dec, 2022 </td>
+                            <td> 21 Dec, 2022 </td>
+                            <td> <strong> $128.90 </strong></td>
+                            <td class="type">
+                                <p class="tipo efectivo">Pago en Efectivo</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 5 </td>
+                            <td> 17 Dec, 2022 </td>
+                            <td> 21 Dec, 2022 </td>
+                            <td> <strong> $128.90 </strong></td>
+                            <td class="type">
+                                <p class="tipo efectivo">Pago en Efectivo</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 6 </td>
+                            <td> 17 Dec, 2022 </td>
+                            <td> 21 Dec, 2022 </td>
+                            <td> <strong> $128.90 </strong></td>
+                            <td class="type">
+                                <p class="tipo efectivo">Pago en Efectivo</p>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </section>
+        </section>
+        <section class="edit-delete">
+            <button type="submit">EDITAR</button>
+            <button type="submit">ELIMINAR</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Diseñado y Desarrollado por José Luis Garza Espinoza © 2023. </p>
+    </footer>
+
+
 </body>
+
 </html>
