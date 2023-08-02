@@ -21,11 +21,11 @@
             <h1>SISTEMA DE RESERVAS</h1>
 
             <br>
-            <section class="data-inputs">
+            <form class="data-inputs" th:action="@{reservas/addNew}" method="post">
                 <div class="datadiv">
                     <h2>FECHA DE CHECK IN</h2>
                     <div>
-                        <input type="date" name="date-check-in">
+                        <input type="date" name="fechaEntrada">
                     </div>
                 </div>
 
@@ -34,7 +34,7 @@
                 <div class="datadiv">
                     <h2>FECHA DE CHECK OUT</h2>
                     <div>
-                        <input type="date" name="date-check-out">
+                        <input type="date" name="fechaSalida">
                     </div>
                 </div>
 
@@ -43,7 +43,7 @@
                 <div class="datadiv">
                     <h2>VALOR</h2>
                     <div>
-                        <input type="number" id="money" step="1" min="0" placeholder="$">
+                        <input type="number" id="money" step="1" min="0" placeholder="$" name="valor">
                     </div>
                 </div>
 
@@ -51,19 +51,19 @@
 
                 <div class="datadiv">
                     <h2>FORMA DE PAGO</h2>
-                    <select id="paymethod">
-                        <option value="credit">Tarjeta de Crédito</option>
-                        <option value="debit">Tarjeta de Débito</option>
-                        <option value="cash">Dinero en Efectivo</option>
+                    <select id="paymethod" name="formaDePago">
+                        <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+                        <option value="Tarjeta de Débito">Tarjeta de Débito</option>
+                        <option value="Pago en Efectivo">Pago en Efectivo</option>
                     </select>
                 </div>
 
                 <a class="button" th:href=@{/huespedes}>
-                    <button type="submit">SIGUIENTE</button> <!-- TIENE QUE CAMBIARSE A UN -->
+                    <button type="submit">SIGUIENTE</button> 
     
                 </a>
 
-            </section>
+            </form>
 
         </section>
 

@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -17,7 +18,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Table(name = "reservas")
+@Table(name = "Reservas")
 @Entity(name = "Reserva")
 @Data
 @NoArgsConstructor
@@ -27,17 +28,21 @@ public class Reserva {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_reserva")
 	private Long id;
 
-	@DateTimeFormat(pattern = "dd-MM-yyyy")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Column(name = "fecha_entrada")
 	private Date fechaEntrada;
 
-	@DateTimeFormat(pattern = "dd-MM-yyyy")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Column(name = "fecha_salida")
 	private Date fechaSalida;
 
 	private float valor;
 
-	@Enumerated(EnumType.STRING)
-	private FormaDePago formaDePago;
+	@Column(name = "forma_pago")
+	private String formaDePago;
+	
 
 }

@@ -1,11 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Paradise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/menu-busqueda.css">
+
 </head>
+
 <body>
+
+    <main>
+
+        <h1 class="header-title">SISTEMA DE BÚSQUEDA</h1>
+        <header>
+            <img src="../Imagenes/logo circular completo.png" alt="Logo Hotel Paradise">
+            <div class="input-group">
+                <input type="search"> 
+                <img src="../Imagenes/busqueda.png" alt="search">
+            </div>
+        </header>
+
+
+        <section class="table">
+            <section class="table__header">
+                <div >
+                    <button class="btn__reservas" > <img src="../Imagenes/calendar-check (3).png">Registro de Reservas</button>
+                </div>
+                <div>
+                    <button class="btn__huespedes" > <img src="../Imagenes/buscar.png">Huéspedes</button>
+                </div>
+               
+            </section>
+            <section class="table__body">
+                <table>
+                    <thead id="table-header">
+                        <tr>
+                            <th id="th-id"> Id <span class="icon-arrow">&UpArrow;</span></th>
+                            <th id="th-checkin"> Fecha Check In <span class="icon-arrow">&UpArrow;</span></th>
+                            <th id="th-checkout"> Fecha Check Out <span class="icon-arrow">&UpArrow;</span></th>
+                            <th id="th-precio"> Precio <span class="icon-arrow">&UpArrow;</span></th>
+                            <th id="th-tipopago"> Tipo de Pago <span class="icon-arrow">&UpArrow;</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <tr th:each="reserva:${reservas}">
+                            <td th:text="${reserva.id}"> </td>
+                            <td th:text="${reserva.fechaEntrada}"> </td>
+                            <td th:text="${reserva.fechaSalida}"> </td>
+                            <td> <strong th:text="${reserva.valor}"></strong></td>
+               				<td class="type">
+                  				  <p class="tipo" th:text="${reserva.formaDePago}" 
+                     					th:classappend="(${reserva.formaDePago == 'Tarjeta de Crédito'} ? 'credito' 
+	                                 		   : (${reserva.formaDePago == 'Tarjeta de Débito'} ? 'debito' 
+	                                	       : 'efectivo'))"></p>
+               				</td>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+        <section class="edit-delete">
+            <button type="submit">EDITAR</button>
+            <button type="submit">ELIMINAR</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Diseñado y Desarrollado por José Luis Garza Espinoza © 2023. </p>
+    </footer>
     
+    <script src="../JS/menu-busqueda.js"></script>
+
 </body>
+
 </html>
