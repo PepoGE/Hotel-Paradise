@@ -17,10 +17,12 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Table(name = "Reservas")
 @Entity(name = "Reserva")
 @Data
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -44,5 +46,9 @@ public class Reserva {
 	@Column(name = "forma_pago")
 	private String formaDePago;
 	
-
+	public String getValor() {
+        return String.valueOf(valor);
+    }
+	
+	
 }

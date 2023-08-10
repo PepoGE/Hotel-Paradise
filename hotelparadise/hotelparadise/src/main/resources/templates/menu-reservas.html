@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/CSS/menu-reservas.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/menu-reservas.css">
     <title>Hotel Paradise</title>
 </head>
 
@@ -21,11 +21,11 @@
             <h1>SISTEMA DE RESERVAS</h1>
 
             <br>
-            <form class="data-inputs" th:action="@{reservas/addNew}" method="post">
+            <form class="data-inputs" th:action="@{reservas/addNew}" method="post" id="formulario">
                 <div class="datadiv">
                     <h2>FECHA DE CHECK IN</h2>
                     <div>
-                        <input type="date" name="fechaEntrada" id="check-in-date">
+                        <input type="date" name="fechaEntrada" id="check-in-date" required>
                     </div>
                 </div>
 
@@ -34,7 +34,7 @@
                 <div class="datadiv">
                     <h2>FECHA DE CHECK OUT</h2>
                     <div>
-                        <input type="date" name="fechaSalida" id="check-out-date">
+                        <input type="date" name="fechaSalida" id="check-out-date" required>
                     </div>
                 </div>
 
@@ -42,8 +42,8 @@
 
                 <div class="datadiv">
                     <h2>VALOR</h2>
-                    <div>
-                        <input type="number" id="money" step="1" min="0" placeholder="$" name="valor">
+                    <div class="valor-input">
+                        <span>$</span><input type="text" id="money" name="valor" readonly>
                     </div>
                 </div>
 
@@ -52,8 +52,8 @@
                 <div class="datadiv">
                     <h2>FORMA DE PAGO</h2>
                     <select id="paymethod" name="formaDePago">
+						<option value="Tarjeta de Débito">Tarjeta de Débito</option>
                         <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
-                        <option value="Tarjeta de Débito">Tarjeta de Débito</option>
                         <option value="Pago en Efectivo">Pago en Efectivo</option>
                     </select>
                 </div>

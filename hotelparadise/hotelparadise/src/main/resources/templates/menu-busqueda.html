@@ -21,7 +21,7 @@
         <header>
             <img src="../Imagenes/logo circular completo.png" alt="Logo Hotel Paradise">
             <div class="input-group">
-                <input type="search"> 
+                <input type="search">
                 <img src="../Imagenes/busqueda.png" alt="search">
             </div>
         </header>
@@ -29,13 +29,14 @@
 
         <section class="table">
             <section class="table__header">
-                <div >
-                    <button class="btn__reservas" > <img src="../Imagenes/calendar-check (3).png">Registro de Reservas</button>
+                <div>
+                    <button class="btn__reservas"> <img src="../Imagenes/calendar-check (3).png">Registro de
+                        Reservas</button>
                 </div>
                 <div>
-                    <button class="btn__huespedes" > <img src="../Imagenes/buscar.png">Huéspedes</button>
+                    <button class="btn__huespedes"> <img src="../Imagenes/buscar.png">Huéspedes</button>
                 </div>
-               
+
             </section>
             <section class="table__body">
                 <table>
@@ -51,15 +52,14 @@
                     <tbody id="table-body">
                         <tr th:each="reserva:${reservas}">
                             <td th:text="${reserva.id}"> </td>
-                            <td th:text="${reserva.fechaEntrada}"> </td>
-                            <td th:text="${reserva.fechaSalida}"> </td>
-                            <td> <strong th:text="${reserva.valor}"></strong></td>
-               				<td class="type">
-                  				  <p class="tipo" th:text="${reserva.formaDePago}" 
-                     					th:classappend="(${reserva.formaDePago == 'Tarjeta de Crédito'} ? 'credito' 
+                            <td th:text="${reserva.fechaEntrada}" class="date-to-format"> </td>
+                            <td th:text="${reserva.fechaSalida}" class="date-to-format"> </td>
+                            <td> <span>$</span><strong th:text="${reserva.valor}"></strong></td>
+                            <td class="type">
+                                <p class="tipo" th:text="${reserva.formaDePago}" th:classappend="(${reserva.formaDePago == 'Tarjeta de Crédito'} ? 'credito' 
 	                                 		   : (${reserva.formaDePago == 'Tarjeta de Débito'} ? 'debito' 
 	                                	       : 'efectivo'))"></p>
-               				</td>
+                            </td>
                             </td>
 
                         </tr>
@@ -67,9 +67,43 @@
                 </table>
             </section>
         </section>
+
+        <section class="edit-form-container" style="display: none;">
+            <section class="edit-form" style="display: none;">
+                <h2>EDITAR RESERVA</h2>
+                <form id="reservation-form">
+                    <label for="edit-id">ID:</label>
+                    <input type="text" id="edit-id" name="edit-id" readonly>
+
+                    <label for="edit-fechaentrada">Fecha Entrada:</label>
+                    <input type="date" id="edit-fechaentrada" name="fechaEntrada">
+
+                    <label for="edit-fechasalida">Fecha Salida:</label>
+                    <input type="date" id="edit-fechasalida" name="fechaSalida">
+
+                    <label for="edit-valor">Valor:</label>
+                    <input type="text" id="edit-valor" name="valor" readonly>
+
+                    <label for="edit-tipopago">Tipo de Pago:</label>
+                    <select id="edit-tipopago" name="formaDePago">
+						<option value="Tarjeta de Débito">Tarjeta de Débito</option>
+                        <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+                        <option value="Pago en Efectivo">Pago en Efectivo</option>
+                    </select>
+
+                    <div class="buttons">
+                        <button type="button" id="cancel-button-edit">CANCELAR</button>
+                        <button type="submit" id="save-button-edit">GUARDAR</button>
+                    </div>
+
+                </form>
+            </section>
+        </section>
+
+
         <section class="edit-delete">
-            <button type="submit">EDITAR</button>
-            <button type="submit">ELIMINAR</button>
+            <button type="button" id="edit-button">EDITAR</button>
+            <button type="button" id="delete-button">ELIMINAR</button>
         </section>
 
     </main>
@@ -77,8 +111,9 @@
     <footer>
         <p>Diseñado y Desarrollado por José Luis Garza Espinoza © 2023. </p>
     </footer>
-    
+
     <script src="../JS/menu-busqueda.js"></script>
+    <script src="../JS/edit-button.js"></script>
 
 </body>
 

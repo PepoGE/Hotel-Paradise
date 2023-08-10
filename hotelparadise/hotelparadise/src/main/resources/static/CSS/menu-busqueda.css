@@ -146,7 +146,7 @@ button:hover{
 .table__header button:hover{
     transform: scale(1.025);
     cursor: pointer;
-    background-color: #CAF0F8;;
+    background-color: #CAF0F8;
     color: #03045E;
 }
 
@@ -236,6 +236,11 @@ tbody tr:hover {
     cursor: pointer;
 }
 
+.selected-row {
+    background-color: #a9f1ffa9 !important;
+}
+
+
 
 tbody tr td,
 tbody tr td p,
@@ -313,6 +318,90 @@ thead th.asc span.icon-arrow{
 thead th.active,tbody td.active {
     color: #6c00bd;
 }
+
+
+
+
+.edit-form-container{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #03055e54;
+    opacity: 0; /* Comienza con opacidad 0 */
+    transition: .5s ease; /* Transición de opacidad */
+}
+
+
+
+.edit-form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40vw;
+    max-height: 70vh;
+    background-color: #CAF0F8;
+    border: #0077B6;
+    border-style: solid;
+    border-radius: .5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    color: #03045E;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    opacity: 0; /* Comienza con opacidad 0 */
+    transition: opacity 1s ease; /* Transición de opacidad */
+}
+
+
+.edit-form form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    
+}
+
+.edit-form label{
+    margin-bottom: .3em;
+}
+
+.edit-form input{
+    border: #d9d9d9;
+    border-radius: .3em;
+    min-height: 2em;
+    margin-bottom: .75em;
+}
+
+.edit-form select{
+    border: #d9d9d9;
+    border-radius: .3em;
+    min-height: 2em;
+    margin-bottom: .75em;
+}
+
+.edit-form form .buttons{
+    padding-top: 1em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.edit-form button{
+    font-size: 1em;
+    width: 45%;
+
+}
+
+
+
+
+
+
 
 .edit-delete{
     margin-top: 1.5em;
