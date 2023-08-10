@@ -23,4 +23,8 @@ public class ReservaService {
 		reservaRepository.save(reserva);
 	}
 	
+	public void updateReserva(Reserva reserva) {
+		reservaRepository.save(reserva);
+	}
+	
 }

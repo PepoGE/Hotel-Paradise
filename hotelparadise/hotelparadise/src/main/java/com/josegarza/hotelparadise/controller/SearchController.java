@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.josegarza.hotelparadise.models.Reserva;
 import com.josegarza.hotelparadise.services.ReservaService;
@@ -25,5 +26,13 @@ public class SearchController {
 		
 		return "menu-busqueda";
 	}
+	
+	@PostMapping("/search/updateReserva")
+	public String updateReserva(Reserva reserva) {
+		reservaService.updateReserva(reserva);
+		return "redirect:/search";
+	}
+	
+	
 	
 }

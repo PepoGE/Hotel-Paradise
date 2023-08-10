@@ -71,9 +71,9 @@
         <section class="edit-form-container" style="display: none;">
             <section class="edit-form" style="display: none;">
                 <h2>EDITAR RESERVA</h2>
-                <form id="reservation-form">
+                <form id="reservation-form" th:action="@{search/updateReserva}" method="post">
                     <label for="edit-id">ID:</label>
-                    <input type="text" id="edit-id" name="edit-id" readonly>
+                    <input type="text" id="edit-id" name="id" readonly>
 
                     <label for="edit-fechaentrada">Fecha Entrada:</label>
                     <input type="date" id="edit-fechaentrada" name="fechaEntrada">
@@ -82,7 +82,9 @@
                     <input type="date" id="edit-fechasalida" name="fechaSalida">
 
                     <label for="edit-valor">Valor:</label>
-                    <input type="text" id="edit-valor" name="valor" readonly>
+                    <div class="money-box">
+                        <span>$</span> <input type="text" id="edit-valor" name="valor" readonly>
+                    </div>
 
                     <label for="edit-tipopago">Tipo de Pago:</label>
                     <select id="edit-tipopago" name="formaDePago">
