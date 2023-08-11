@@ -68,10 +68,13 @@
             </section>
         </section>
 
+
+
         <section class="edit-form-container" style="display: none;">
             <section class="edit-form" style="display: none;">
                 <h2>EDITAR RESERVA</h2>
                 <form id="reservation-form" th:action="@{search/updateReserva}" method="post">
+                    
                     <label for="edit-id">ID:</label>
                     <input type="text" id="edit-id" name="id" readonly>
 
@@ -103,6 +106,22 @@
         </section>
 
 
+        <section class="delete-form-container" style="display: none;">
+            <section class="delete-form">
+                <img src="../Imagenes/advertencia-de-triangulo.png">
+                <h2>ELIMINAR RESERVA <span id="delete-id" name="id"> </span></h2>
+                <p>¿Estás seguro de eliminar esta reserva? </p>
+                <div class="buttons">
+                    <button type="submit" id="cancel-button-delete">CANCELAR</button>
+                    <a href="" id="confirm-delete">
+                    <button type="submit" id="confirm-button-delete">CONFIRMAR</button></a>
+                </div>
+             
+            </section>
+
+        </section>
+
+
         <section class="edit-delete">
             <button type="button" id="edit-button">EDITAR</button>
             <button type="button" id="delete-button">ELIMINAR</button>
@@ -115,8 +134,7 @@
     </footer>
 
     <script src="../JS/menu-busqueda.js"></script>
-    <script src="../JS/edit-button.js"></script>
-
+    <script src="../JS/edit-delete-button.js"></script>
 </body>
 
 </html>

@@ -5,8 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.josegarza.hotelparadise.models.Reserva;
 import com.josegarza.hotelparadise.services.ReservaService;
@@ -32,6 +36,13 @@ public class SearchController {
 		reservaService.updateReserva(reserva);
 		return "redirect:/search";
 	}
+	
+	@RequestMapping(value = "/search/deleteReservaById/{id}", method = {RequestMethod.DELETE, RequestMethod.GET})
+	public String deleteReservaById(@PathVariable Long id){
+		reservaService.deleteReservaById(id);
+		return "redirect:/search";
+	}
+	
 	
 	
 	

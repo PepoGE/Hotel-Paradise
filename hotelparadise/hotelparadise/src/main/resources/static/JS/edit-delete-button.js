@@ -1,12 +1,21 @@
 // Variables para almacenar la información de la fila seleccionada
 let selectedRowData = null;
 
-const editButton = document.getElementById("edit-button");
-const cancelButton = document.getElementById("cancel-button-edit");
-const saveButton = document.getElementById("save-button-edit");
-
+//Formularios de Editar y Eliminar 
+const deleteFormContainer = document.querySelector(".delete-form-container");
 const editForm = document.querySelector(".edit-form");
 const editFormContainer = document.querySelector(".edit-form-container");
+
+//Botones de Menu Editar
+const editButton = document.getElementById("edit-button");
+const cancelEditButton = document.getElementById("cancel-button-edit");
+const saveButton = document.getElementById("save-button-edit");
+
+//Botones de Menu Eliminar
+const deleteButton = document.getElementById("delete-button");
+const cancelDeleteButton = document.getElementById("cancel-button-delete");
+const confirmButton = document.getElementById("confirm-button-delete");
+
 
 // Get all the rows in the table body
 const tableRows = document.querySelectorAll('#table-body tr');
@@ -105,12 +114,50 @@ document.getElementById("edit-fechasalida").addEventListener('input', () => {
     actualizarValor();
 });
 
-cancelButton.addEventListener('click', () => {
+cancelEditButton.addEventListener('click', () => {
     // Hide the edit form with opacity transition
     editFormContainer.style.opacity = 0;
     setTimeout(() => {
         editFormContainer.style.display = "none";
         editForm.style.display = "none";
+    }, 300); // Adjust the transition time as needed
+});
+
+// ... (código posterior)
+
+
+// Add a click event listener to the 'ELIMINAR' button
+deleteButton.addEventListener('click', () => {
+
+    const deleteIdSpan = document.getElementById("delete-id");
+    deleteIdSpan.textContent = "ID: " + selectedRowData.id;
+    
+
+    // Show the delete form with opacity transition
+    deleteFormContainer.style.display = "flex";
+    setTimeout(() => {
+        deleteFormContainer.style.opacity = 1;
+    }, 0);
+});
+
+confirmButton.addEventListener('click', () => {
+    const selectedId = selectedRowData.id; // Obtén el ID de la reserva seleccionada
+    const URL = document.getElementById("confirm-delete");
+
+    // Construye la URL para la eliminación utilizando el ID
+    const deleteURL = '/search/deleteReservaById/' + selectedId;
+
+    URL.href = deleteURL
+
+
+});
+
+
+cancelDeleteButton.addEventListener('click', () => {
+    // Hide the edit form with opacity transition
+    deleteFormContainer.style.opacity = 0;
+    setTimeout(() => {
+        deleteFormContainer.style.display = "none";
     }, 300); // Adjust the transition time as needed
 });
 
