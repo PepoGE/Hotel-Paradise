@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Paradise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/menu-busqueda.css">
+
+</head>
+
+<body>
+
+    <main>
+
+        <h1 class="header-title">SISTEMA DE BÚSQUEDA</h1>
+        <header>
+            <img src="../Imagenes/logo circular completo.png" alt="Logo Hotel Paradise">
+            <div class="input-group">
+                <input type="search">
+                <img src="../Imagenes/busqueda.png" alt="search">
+            </div>
+        </header>
+
+
+        <section class="table">
+            <section class="table__header">
+                <div>
+                    <button class="btn__reservas"> <img src="../Imagenes/calendar-check (3).png">Registro de
+                        Reservas</button>
+                </div>
+                <div>
+                    <button class="btn__huespedes"> <img src="../Imagenes/buscar.png">Huéspedes</button>
+                </div>
+
+            </section>
+            <section class="table__body">
+                <table>
+                    <thead id="table-header">
+                        <tr>
+                            <th id="th-id"> Id <span class="icon-arrow">&UpArrow;</span></th>
+                            <th id="th-name"> Nombre(s) <span class="icon-arrow">&UpArrow;</span></th>
+                            <th id="th-lastname"> Apellido(s) <span class="icon-arrow">&UpArrow;</span></th>
+                            <th id="th-born-date"> Fecha de Nacimiento <span class="icon-arrow">&UpArrow;</span></th>
+                            <th id="th-nationality"> Nacionalidad <span class="icon-arrow">&UpArrow;</span></th>
+                            <th id="th-cellphone"> Teléfono <span class="icon-arrow">&UpArrow;</span></th>
+                            <th id="th-reservation-id"> No. Reserva <span class="icon-arrow">&UpArrow;</span></th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <tr th:each="huesped:${huespedes}">
+                            <td th:text="${huesped.id}"> </td>
+                            <td th:text="${huesped.nombre}"> </td>
+                            <td th:text="${huesped.apellido}"> </td>
+                            <td th:text="${huesped.fechaNacimiento}" class="date-to-format"> </td>
+                            <td th:text="${huesped.pais.nacionalidad}"> </td>
+                            <td th:text="${huesped.pais.prefijoTelefono} + ' ' + ${huesped.telefono}"></td>
+                            <td th:text="${huesped.reserva.id}"> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+
+
+
+        <section class="edit-form-container" style="display: none;">
+            <section class="edit-form" style="display: none;">
+                <h2>EDITAR RESERVA</h2>
+                <form id="reservation-form" th:action="@{huespedes/updateHuesped}" method="post">
+                    
+                    <label for="edit-id">ID:</label>
+                    <input type="text" id="edit-id" name="id" readonly>
+
+                    <label for="edit-id">Nombre:</label>
+                    <input type="text" id="edit-id" name="nombre" readonly>
+
+                    <label for="edit-id">Apellido:</label>
+                    <input type="text" id="edit-id" name="apellido" readonly>
+
+                    <label for="edit-fechaentrada">Fecha Nacimiento:</label>
+                    <input type="date" id="edit-fechaentrada" name="fechaNacimiento">
+
+                    <label for="edit-id">Pais:</label>
+                    <input type="text" id="edit-id" name="pais" readonly>
+
+                    <label for="edit-id">Telefono:</label>
+                    <input type="text" id="edit-id" name="telefono" readonly>
+                    
+                    <label for="edit-tipopago">Tipo de Pago:</label>
+                    <select id="edit-tipopago" name="formaDePago">
+						<option value="Tarjeta de Débito">Tarjeta de Débito</option>
+                        <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+                        <option value="Pago en Efectivo">Pago en Efectivo</option>
+                    </select>
+
+                    <div class="buttons">
+                        <button type="button" id="cancel-button-edit">CANCELAR</button>
+                        <button type="submit" id="save-button-edit">GUARDAR</button>
+                    </div>
+
+                </form>
+            </section>
+        </section>
+
+
+        <section class="delete-form-container" style="display: none;">
+            <section class="delete-form">
+                <img src="../Imagenes/advertencia-de-triangulo.png">
+                <h2>ELIMINAR RESERVA <span id="delete-id" name="id"> </span></h2>
+                <p>¿Estás seguro de eliminar esta reserva? </p>
+                <div class="buttons">
+                    <button type="submit" id="cancel-button-delete">CANCELAR</button>
+                    
+                    <button type="submit" id="confirm-button-delete"><a href="" id="confirm-delete">CONFIRMAR</a></button>
+                </div>
+             
+            </section>
+
+        </section>
+
+
+        <section class="edit-delete">
+            <button type="button" id="edit-button">EDITAR</button>
+            <button type="button" id="delete-button">ELIMINAR</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Diseñado y Desarrollado por José Luis Garza Espinoza © 2023. </p>
+    </footer>
+
+    <script src="../JS/menu-busqueda.js"></script>
+    <script src="../JS/edit-delete-button.js"></script>
+</body>
+
+</html>

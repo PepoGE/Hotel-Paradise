@@ -324,7 +324,7 @@ thead th.active,tbody td.active {
 
 .edit-form-container{
     width: 100vw;
-    height: 100vh;
+    height: 93vh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -423,7 +423,7 @@ thead th.active,tbody td.active {
 
 .delete-form-container{
     width: 100vw;
-    height: 100vh;
+    height: 93vh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -472,6 +472,13 @@ thead th.active,tbody td.active {
     padding-top: 1em;
     display: flex;
     justify-content: space-around;
+    outline: none;
+}
+
+.delete-form a{
+    outline: none;
+    text-decoration: none;
+    color: #CAF0F8;
 }
 
 .delete-form button{

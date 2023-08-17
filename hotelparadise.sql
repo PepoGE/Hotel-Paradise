@@ -31,15 +31,21 @@ DELIMITER ;
 
 
 CREATE TABLE Huespedes(
-id_huespeded int auto_increment not null primary key,
+id_huesped int auto_increment not null primary key,
 nombre varchar(100) not null,
 apellido varchar(100) not null,
 fecha_nacimiento date not null,
 nacionalidad varchar(100) not null,
-telefono varchar(10) not null,
+telefono varchar(20) not null unique,
+codigo_pais varchar(5) null,
 id_reserva int NULL,
 FOREIGN KEY (id_reserva) REFERENCES Reservas(id_reserva) ON UPDATE CASCADE ON DELETE CASCADE
 );
+
+INSERT INTO Huespedes (nombre, apellido, fecha_nacimiento, nacionalidad, telefono)
+VALUES ('Jessica', 'Gaytán Cruz' , '2003-08-08', 'México','5524234233'),
+		('José Luis', 'Garza Espinoza' , '2003-04-26', 'México','5522423132'),
+        ('Concepcion', 'Cruz Tapia' , '1974-09-15', 'México','5599873423');
 
 INSERT INTO Reservas (fecha_entrada, fecha_salida, formaPago)
 VALUES ('2023-08-05', '2023-08-08', 'Tarjeta de Débito'),

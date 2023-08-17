@@ -26,12 +26,12 @@
             <h1>REGISTRO HUÉSPED</h1>
 
             <br>
-            <section class="data-inputs">
+            <form class="data-inputs" th:action="@{huespedes/addNew}" method="post" id="formulario-huespedes">
 
                 <div class="datadiv">
                     <h2>NOMBRE</h2>
                     <div>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="nombre" required>
                     </div>
                 </div>
 
@@ -40,7 +40,7 @@
                 <div class="datadiv">
                     <h2>APELLIDOS</h2>
                     <div>
-                        <input type="text" id="lastname" name="lastname" required>
+                        <input type="text" id="lastname" name="apellido" required>
                     </div>
                 </div>
 
@@ -49,7 +49,7 @@
                 <div class="datadiv">
                     <h2>FECHA DE NACIMIENTO</h2>
                     <div>
-                        <input type="date" id="born-date" name="born-date" required>
+                        <input type="date" id="born-date" name="fechaNacimiento" required>
                     </div>
                 </div>
 
@@ -57,10 +57,8 @@
 
                 <div class="datadiv">
                     <h2>NACIONALIDAD</h2>
-                    <select id="nationality" name="nationality">
-                        <option value="item-mexico">MÉXICO</option>
-                        <option value="item-argentina">ARGENTINA</option>
-                        <option value="item-chile">CHILE</option>
+                    <select id="nationality" name="pais" required>
+                        <option th:each="pais : ${paises}" th:value="${pais.id}" th:text="${pais.nombre}"></option>
                     </select>
                 </div>
 
@@ -78,18 +76,18 @@
                 <div class="datadiv">
                     <h2>NUMERO DE RESERVA</h2>
                     <div>
-                        <input type="number" id="reservation-number" name="reservation-number" readonly required>
+                        <input type="number" id="reservation-number" name="reserva" th:value="${idReserva}" required readonly>
                     </div>
                 </div>
 
                 <br>
 
-                <a class="button" href="">
+                <a class="button" th:href=@{search}>
                     <button type="submit">SIGUIENTE</button> <!-- TIENE QUE CAMBIARSE A UN -->
     
                 </a>
 
-            </section>
+            </form>
 
         </section>
 

@@ -11,6 +11,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,27 +30,29 @@ import lombok.Setter;
 @EqualsAndHashCode(of = "id")
 public class Reserva {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_reserva")
-	private Long id;
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    @Column(name = "id_reserva")
+	    private int id;
 
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@Column(name = "fecha_entrada")
-	private Date fechaEntrada;
+	    @DateTimeFormat(pattern = "yyyy-MM-dd")
+	    @Column(name = "fecha_entrada", nullable = false)
+	    private Date fechaEntrada;
 
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@Column(name = "fecha_salida")
-	private Date fechaSalida;
+	    @DateTimeFormat(pattern = "yyyy-MM-dd")
+	    @Column(name = "fecha_salida")
+	    private Date fechaSalida;
 
-	private float valor;
+	    @Column(name = "valor")
+	    private float valor;
 
-	@Column(name = "forma_pago")
-	private String formaDePago;
-	
-	public String getValor() {
-        return String.valueOf(valor);
-    }
+	    @Column(name = "formaPago")
+	    private String formaDePago;
+
+
+	    public String getValor() {
+	    	return String.valueOf(valor);
+	    }
 	
 	
 }

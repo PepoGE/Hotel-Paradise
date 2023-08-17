@@ -1,7 +1,7 @@
 package com.josegarza.hotelparadise.models;
 
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -25,41 +25,34 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Table(name="huespedes")
-@Entity(name = "Huesped")
+@Table(name="paises")
+@Entity(name = "Pais")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of ="id")
-public class Huesped {
+public class Pais {
 
-	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id_huesped")
+	@Column(name="id_pais")
     private int id;
 
     @Column(name = "nombre", nullable = false)
     private String nombre;
 
-    @Column(name = "apellido", nullable = false)
-    private String apellido;
+    @Column(name = "prefijo_telefono", nullable = false)
+    private String prefijoTelefono;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "fecha_nacimiento", nullable = false) //Agregar nullable
-    private Date fechaNacimiento;
+    @Column(name = "nacionalidad", nullable = false)
+    private String nacionalidad;
 
-    @Column(name = "telefono", nullable = false, unique = true)
-    private String telefono;
+    @OneToMany(mappedBy = "pais")
+    private Set<Huesped> huespedes;
 
-    @ManyToOne
-    @JoinColumn(name = "id_pais", nullable = false)
-    private Pais pais;
-
-    @ManyToOne
-    @JoinColumn(name = "id_reserva")
-    private Reserva reserva;
-
+    // Getters, setters y constructores
+	
+	
 	
 	
 	

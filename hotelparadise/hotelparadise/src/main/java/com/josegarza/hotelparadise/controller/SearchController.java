@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.josegarza.hotelparadise.models.Huesped;
 import com.josegarza.hotelparadise.models.Reserva;
+import com.josegarza.hotelparadise.services.HuespedService;
 import com.josegarza.hotelparadise.services.ReservaService;
 
 @Controller
@@ -21,28 +23,30 @@ public class SearchController {
 	@Autowired
 	private ReservaService reservaService;
 
-	@GetMapping("/search")
-	public String goBusquedas(Model model) {
+	@Autowired
+	private HuespedService huespedService;
+	
+
+	@GetMapping("/search/reservas")
+	public String goBusquedasReservas(Model model) {
 		
 		List<Reserva> reservaList = reservaService.getReservas();
-		
+				
 		model.addAttribute("reservas",reservaList);
 		
-		return "menu-busqueda";
+		return "menu-busqueda-reservas";
 	}
 	
-	@PostMapping("/search/updateReserva")
-	public String updateReserva(Reserva reserva) {
-		reservaService.updateReserva(reserva);
-		return "redirect:/search";
+	@GetMapping("/search/huespedes")
+	public String goBusquedasHuespedes(Model model) {
+		
+		List<Huesped> huespedList = huespedService.getHuespedes();
+		
+		model.addAttribute("huespedes", huespedList);
+		
+		
+		return "menu-busqueda-huespedes";
 	}
-	
-	@RequestMapping(value = "/search/deleteReservaById/{id}", method = {RequestMethod.DELETE, RequestMethod.GET})
-	public String deleteReservaById(@PathVariable Long id){
-		reservaService.deleteReservaById(id);
-		return "redirect:/search";
-	}
-	
 	
 	
 	

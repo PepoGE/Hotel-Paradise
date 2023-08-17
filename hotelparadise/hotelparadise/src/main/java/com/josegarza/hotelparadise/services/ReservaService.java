@@ -31,4 +31,8 @@ public class ReservaService {
 		reservaRepository.deleteById(id);
 	}
 	
+	public int getLastIdReserva() {
+        return reservaRepository.findLastReservaId();
+    }
+	
 }

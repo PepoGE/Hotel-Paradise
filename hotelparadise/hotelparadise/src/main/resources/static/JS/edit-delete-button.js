@@ -145,7 +145,7 @@ confirmButton.addEventListener('click', () => {
     const URL = document.getElementById("confirm-delete");
 
     // Construye la URL para la eliminación utilizando el ID
-    const deleteURL = '/search/deleteReservaById/' + selectedId;
+    const deleteURL = '/reservas/deleteReservaById/' + selectedId;
 
     URL.href = deleteURL
 

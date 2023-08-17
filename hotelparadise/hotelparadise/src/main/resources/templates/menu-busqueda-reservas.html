@@ -73,7 +73,7 @@
         <section class="edit-form-container" style="display: none;">
             <section class="edit-form" style="display: none;">
                 <h2>EDITAR RESERVA</h2>
-                <form id="reservation-form" th:action="@{search/updateReserva}" method="post">
+                <form id="reservation-form" th:action="@{reservas/updateReserva}" method="post">
                     
                     <label for="edit-id">ID:</label>
                     <input type="text" id="edit-id" name="id" readonly>
@@ -113,8 +113,8 @@
                 <p>¿Estás seguro de eliminar esta reserva? </p>
                 <div class="buttons">
                     <button type="submit" id="cancel-button-delete">CANCELAR</button>
-                    <a href="" id="confirm-delete">
-                    <button type="submit" id="confirm-button-delete">CONFIRMAR</button></a>
+                    
+                    <button type="submit" id="confirm-button-delete"><a href="" id="confirm-delete">CONFIRMAR</a></button>
                 </div>
              
             </section>
