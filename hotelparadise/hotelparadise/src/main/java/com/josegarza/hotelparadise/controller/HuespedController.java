@@ -50,7 +50,7 @@ public class HuespedController {
 		return "redirect:/search";
 	}
 	
-	@PostMapping("/huespedes/updateHuesped")
+	@PostMapping("/search/huespedes/updateHuesped")
 	public String updateHuesped(Huesped huesped) {
 		huespedService.updateHuesped(huesped);
 		return "redirect:/search/huespedes";

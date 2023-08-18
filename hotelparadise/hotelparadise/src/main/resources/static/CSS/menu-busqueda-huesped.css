@@ -1,0 +1,18 @@
+.btn__huespedes{
+    background-color: #CAF0F8;
+    color: #03045E;
+}
+
+a{
+    outline: none;
+    text-decoration: none;
+}
+
+td{
+    padding: .5rem;
+}
+
+.edit-form{
+    width: 40vw;
+    max-height: 80vh;
+}

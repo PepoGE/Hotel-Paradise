@@ -28,7 +28,7 @@ public class ReservaController {
 		return "redirect:/huespedes";
 	}
 	
-	@PostMapping("/reservas/updateReserva")
+	@PostMapping("/search/reservas/updateReserva")
 	public String updateReserva(Reserva reserva) {
 		reservaService.updateReserva(reserva);
 		return "redirect:/search/reservas";

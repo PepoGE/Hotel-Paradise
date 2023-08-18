@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../CSS/menu-busqueda.css">
+    <link rel="stylesheet" href="../CSS/menu-busqueda-reserva.css">
 
 </head>
 
@@ -30,11 +31,11 @@
         <section class="table">
             <section class="table__header">
                 <div>
-                    <button class="btn__reservas"> <img src="../Imagenes/calendar-check (3).png">Registro de
-                        Reservas</button>
+                    <a class="btn__reservas"> <img src="../Imagenes/calendar-check (3).png">Registro de
+                        Reservas</a>
                 </div>
                 <div>
-                    <button class="btn__huespedes"> <img src="../Imagenes/buscar.png">Huéspedes</button>
+                    <a clasas="btn__huespedes" th:href="@{/search/huespedes}"> <img src="../Imagenes/buscar.png">Huéspedes</a>
                 </div>
 
             </section>
@@ -134,7 +135,7 @@
     </footer>
 
     <script src="../JS/menu-busqueda.js"></script>
-    <script src="../JS/edit-delete-button.js"></script>
+    <script src="../JS/edit-delete-button-reservas.js"></script>
 </body>
 
 </html>

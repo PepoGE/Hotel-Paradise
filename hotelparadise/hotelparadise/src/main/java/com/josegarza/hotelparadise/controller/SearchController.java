@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.josegarza.hotelparadise.models.Huesped;
+import com.josegarza.hotelparadise.models.Pais;
 import com.josegarza.hotelparadise.models.Reserva;
 import com.josegarza.hotelparadise.services.HuespedService;
+import com.josegarza.hotelparadise.services.PaisService;
 import com.josegarza.hotelparadise.services.ReservaService;
 
 @Controller
@@ -25,6 +27,11 @@ public class SearchController {
 
 	@Autowired
 	private HuespedService huespedService;
+	
+	@Autowired
+	private PaisService paisService;
+	
+	
 	
 
 	@GetMapping("/search/reservas")
@@ -41,8 +48,12 @@ public class SearchController {
 	public String goBusquedasHuespedes(Model model) {
 		
 		List<Huesped> huespedList = huespedService.getHuespedes();
+		List<Pais> paisList = paisService.getPaises();
+		List<Reserva> reservaList = reservaService.getReservas();
 		
+		model.addAttribute("reservas",reservaList);
 		model.addAttribute("huespedes", huespedList);
+		model.addAttribute("paises", paisList);
 		
 		
 		return "menu-busqueda-huespedes";

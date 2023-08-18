@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../CSS/menu-busqueda.css">
+    <link rel="stylesheet" href="../CSS/menu-busqueda-huesped.css">
+
+    
 
 </head>
 
@@ -30,11 +33,11 @@
         <section class="table">
             <section class="table__header">
                 <div>
-                    <button class="btn__reservas"> <img src="../Imagenes/calendar-check (3).png">Registro de
-                        Reservas</button>
+                    <a class="btn__reservas" th:href="@{/search/reservas}"> <img src="../Imagenes/calendar-check (3).png">Registro de
+                        Reservas</a>
                 </div>
                 <div>
-                    <button class="btn__huespedes"> <img src="../Imagenes/buscar.png">Huéspedes</button>
+                    <a class="btn__huespedes"> <img src="../Imagenes/buscar.png">Huéspedes</a>
                 </div>
 
             </section>
@@ -42,13 +45,13 @@
                 <table>
                     <thead id="table-header">
                         <tr>
-                            <th id="th-id"> Id <span class="icon-arrow">&UpArrow;</span></th>
-                            <th id="th-name"> Nombre(s) <span class="icon-arrow">&UpArrow;</span></th>
-                            <th id="th-lastname"> Apellido(s) <span class="icon-arrow">&UpArrow;</span></th>
-                            <th id="th-born-date"> Fecha de Nacimiento <span class="icon-arrow">&UpArrow;</span></th>
-                            <th id="th-nationality"> Nacionalidad <span class="icon-arrow">&UpArrow;</span></th>
-                            <th id="th-cellphone"> Teléfono <span class="icon-arrow">&UpArrow;</span></th>
-                            <th id="th-reservation-id"> No. Reserva <span class="icon-arrow">&UpArrow;</span></th>
+                            <th id="th-id">Id<span class="icon-arrow">&UpArrow;</span></th>
+                            <th id="th-name">Nombre<span class="icon-arrow">&UpArrow;</span></th>
+                            <th id="th-lastname">Apellido<span class="icon-arrow">&UpArrow;</span></th>
+                            <th id="th-born-date">Fecha de Nacimiento<span class="icon-arrow">&UpArrow;</span></th>
+                            <th id="th-nationality">País de Origen <span class="icon-arrow">&UpArrow;</span></th>
+                            <th id="th-cellphone">Teléfono<span class="icon-arrow">&UpArrow;</span></th>
+                            <th id="th-reservation-id">No. Reserva<span class="icon-arrow">&UpArrow;</span></th>
 
 
                         </tr>
@@ -59,7 +62,7 @@
                             <td th:text="${huesped.nombre}"> </td>
                             <td th:text="${huesped.apellido}"> </td>
                             <td th:text="${huesped.fechaNacimiento}" class="date-to-format"> </td>
-                            <td th:text="${huesped.pais.nacionalidad}"> </td>
+                            <td th:text="${huesped.pais.nombre}"> </td>
                             <td th:text="${huesped.pais.prefijoTelefono} + ' ' + ${huesped.telefono}"></td>
                             <td th:text="${huesped.reserva.id}"> </td>
                         </tr>
@@ -72,33 +75,31 @@
 
         <section class="edit-form-container" style="display: none;">
             <section class="edit-form" style="display: none;">
-                <h2>EDITAR RESERVA</h2>
+                <h2>EDITAR HUESPED</h2>
                 <form id="reservation-form" th:action="@{huespedes/updateHuesped}" method="post">
                     
                     <label for="edit-id">ID:</label>
                     <input type="text" id="edit-id" name="id" readonly>
 
-                    <label for="edit-id">Nombre:</label>
-                    <input type="text" id="edit-id" name="nombre" readonly>
+                    <label for="edit-name">Nombre:</label>
+                    <input type="text" id="edit-name" name="nombre">
 
-                    <label for="edit-id">Apellido:</label>
-                    <input type="text" id="edit-id" name="apellido" readonly>
+                    <label for="edit-lastName">Apellido:</label>
+                    <input type="text" id="edit-lastName" name="apellido">
 
-                    <label for="edit-fechaentrada">Fecha Nacimiento:</label>
-                    <input type="date" id="edit-fechaentrada" name="fechaNacimiento">
-
-                    <label for="edit-id">Pais:</label>
-                    <input type="text" id="edit-id" name="pais" readonly>
-
-                    <label for="edit-id">Telefono:</label>
-                    <input type="text" id="edit-id" name="telefono" readonly>
+                    <label for="edit-bornDate">Fecha Nacimiento:</label>
+                    <input type="date" id="edit-bornDate" name="fechaNacimiento">
                     
-                    <label for="edit-tipopago">Tipo de Pago:</label>
-                    <select id="edit-tipopago" name="formaDePago">
-						<option value="Tarjeta de Débito">Tarjeta de Débito</option>
-                        <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
-                        <option value="Pago en Efectivo">Pago en Efectivo</option>
+                    <label for="edit-countryName">Pais de Origen:</label>
+                    <select id="edit-countryName" name="pais">
+                        <option th:each="pais : ${paises}" th:value="${pais.id}" th:text="${pais.nombre}"></option>
                     </select>
+              
+                    <label for="edit-cellphone">Telefono:</label>
+                    <input type="text" id="edit-cellphone" name="telefono">
+                    
+                    <label for="edit-reservaId">Reserva:</label>
+                    <input type="number" id="edit-reservaId" name="reserva">
 
                     <div class="buttons">
                         <button type="button" id="cancel-button-edit">CANCELAR</button>
@@ -113,7 +114,7 @@
         <section class="delete-form-container" style="display: none;">
             <section class="delete-form">
                 <img src="../Imagenes/advertencia-de-triangulo.png">
-                <h2>ELIMINAR RESERVA <span id="delete-id" name="id"> </span></h2>
+                <h2>ELIMINAR HUESPED <span id="delete-id" name="id"> </span></h2>
                 <p>¿Estás seguro de eliminar esta reserva? </p>
                 <div class="buttons">
                     <button type="submit" id="cancel-button-delete">CANCELAR</button>
@@ -138,7 +139,7 @@
     </footer>
 
     <script src="../JS/menu-busqueda.js"></script>
-    <script src="../JS/edit-delete-button.js"></script>
+    <script src="../JS/edit-delete-button-huespedes.js"></script>
 </body>
 
 </html>
