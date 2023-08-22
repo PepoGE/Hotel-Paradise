@@ -140,4 +140,5 @@ cancelDeleteButton.addEventListener('click', () => {
     }, 300); // Adjust the transition time as needed
 });
 
+
 // ... (código posterior)

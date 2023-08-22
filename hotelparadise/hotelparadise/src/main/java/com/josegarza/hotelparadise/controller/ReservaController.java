@@ -8,8 +8,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.josegarza.hotelparadise.models.Huesped;
 import com.josegarza.hotelparadise.models.Reserva;
+import com.josegarza.hotelparadise.services.HuespedService;
 import com.josegarza.hotelparadise.services.ReservaService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class ReservaController {
@@ -17,15 +21,18 @@ public class ReservaController {
 	@Autowired
 	private ReservaService reservaService;
 	
+	@Autowired
+	private HuespedService huespedService;
+	
 	@GetMapping("/reservas")
 	public String goReservas() {
 		return "menu-reservas";
 	}
 	
 	@PostMapping("/reservas/addNew")
-	public String addNewReserva(Reserva reserva) {
-		reservaService.saveReserva(reserva);
-		return "redirect:/huespedes";
+	public String addNewReserva(Reserva reserva, HttpSession session) {
+	    session.setAttribute("tempReserva", reserva); // Almacena la reserva en la sesión
+	    return "redirect:/huespedes"; // Redirige al formulario de huéspedes
 	}
 	
 	@PostMapping("/search/reservas/updateReserva")
