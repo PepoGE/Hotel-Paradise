@@ -64,7 +64,10 @@
                             <td th:text="${huesped.fechaNacimiento}" class="date-to-format"> </td>
                             <td th:text="${huesped.pais.nombre}"> </td>
                             <td th:text="${huesped.pais.prefijoTelefono} + ' ' + ${huesped.telefono}"></td>
-                            <td th:text="${huesped.reserva.id}"> </td>
+                            <td>
+                                <span th:if="${huesped.reserva != null}" th:text="${huesped.reserva.id}"></span>
+                                <span th:unless="${huesped.reserva != null}">N/A</span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
