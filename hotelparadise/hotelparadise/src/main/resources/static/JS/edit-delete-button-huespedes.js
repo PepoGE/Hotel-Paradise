@@ -2,6 +2,9 @@
 let selectedRowData = null;
 
 //Formularios de Editar y Eliminar 
+
+// Obtén una referencia al formulario de Editar
+const reservationForm = document.getElementById("reservation-form");
 const deleteFormContainer = document.querySelector(".delete-form-container");
 const editForm = document.querySelector(".edit-form");
 const editFormContainer = document.querySelector(".edit-form-container");
@@ -66,26 +69,48 @@ tableRows.forEach(row => {
 editButton.addEventListener('click', () => {
     // Fill the edit form with selected row data
     document.getElementById("edit-id").value = selectedRowData.id;
-    document.getElementById("edit-name").value =selectedRowData.nombre; 
-    document.getElementById("edit-lastName").value =selectedRowData.apellido; // Convertir al formato YYYY-MM-DD
+    document.getElementById("edit-name").value = selectedRowData.nombre;
+    document.getElementById("edit-lastName").value = selectedRowData.apellido; // Convertir al formato YYYY-MM-DD
     document.getElementById("edit-bornDate").value = convertDateFormatToInput(selectedRowData.fechaNacimiento); // Convertir al formato YYYY-MM-DD
 
-        // Find the select element for country
-        var countrySelect = document.getElementById("edit-countryName");
-    
-        // Loop through the options and set the 'selected' property based on selectedRowData.paisNombre
-        for (var i = 0; i < countrySelect.options.length; i++) {
-            if (countrySelect.options[i].textContent === selectedRowData.paisNombre) {
-                countrySelect.options[i].selected = true;
-            } else {
-                countrySelect.options[i].selected = false; // Ensure other options are not selected
-            }
+    // Find the select element for country
+    var countrySelect = document.getElementById("edit-countryName");
+
+    // Loop through the options and set the 'selected' property based on selectedRowData.paisNombre
+    for (var i = 0; i < countrySelect.options.length; i++) {
+        if (countrySelect.options[i].textContent === selectedRowData.paisNombre) {
+            countrySelect.options[i].selected = true;
+        } else {
+            countrySelect.options[i].selected = false; // Ensure other options are not selected
         }
-        
+    }
 
     document.getElementById("edit-cellphone").value = selectedRowData.telefono;
-    document.getElementById("edit-reservaId").value = selectedRowData.reservaId;
 
+
+    // Find the select element for reservaId
+    const reservaIdSelect = document.getElementById("edit-reservaId");
+
+    // Clear existing options
+    reservaIdSelect.innerHTML = '';
+
+    // Create an option for the selected reserva ID and set it as selected
+    const selectedIdOption = document.createElement("option");
+    selectedIdOption.value = selectedRowData.reservaId;
+    selectedIdOption.textContent = selectedRowData.reservaId;
+    selectedIdOption.selected = true;
+    reservaIdSelect.appendChild(selectedIdOption);
+
+
+    
+    // Check if "N/A" is already selected before adding it as an option
+    if (selectedRowData.reservaId.trim() !== "N/A") {
+        // Add the 'N/A' option
+        const naOption = document.createElement("option");
+        naOption.value = -1;
+        naOption.textContent = "N/A";
+        reservaIdSelect.appendChild(naOption);
+    }
 
     // Show the edit form with opacity transition
     editFormContainer.style.display = "block";
@@ -96,6 +121,16 @@ editButton.addEventListener('click', () => {
     }, 0);
 });
 
+// Agrega un evento al formulario para interceptar el envío
+reservationForm.addEventListener("submit", function (event) {
+    const reservaIdSelect = document.getElementById("edit-reservaId");
+    const selectedReserva = reservaIdSelect.value.trim(); // Elimina espacios en blanco
+
+    if (selectedReserva === "N/A" || selectedReserva === "-1") {
+        // Cambiar el valor a un número que represente la opción nula
+        reservaIdSelect.value = -1;
+    }
+});
 cancelEditButton.addEventListener('click', () => {
     // Hide the edit form with opacity transition
     editFormContainer.style.opacity = 0;
@@ -109,8 +144,8 @@ cancelEditButton.addEventListener('click', () => {
 deleteButton.addEventListener('click', () => {
 
     const deleteIdSpan = document.getElementById("delete-id");
-    deleteIdSpan.textContent = "ID: " + selectedRowData.id;
-    
+    deleteIdSpan.textContent = "ID: " + selectedRowData.id + " Y RESERVA: " + selectedRowData.reservaId;
+
 
     // Show the delete form with opacity transition
     deleteFormContainer.style.display = "flex";
@@ -120,6 +155,9 @@ deleteButton.addEventListener('click', () => {
 });
 
 confirmButton.addEventListener('click', () => {
+
+
+    
     const selectedId = selectedRowData.id; // Obtén el ID de la reserva seleccionada
     const URL = document.getElementById("confirm-delete");
 
@@ -139,6 +177,8 @@ cancelDeleteButton.addEventListener('click', () => {
         deleteFormContainer.style.display = "none";
     }, 300); // Adjust the transition time as needed
 });
+
+
 
 
 // ... (código posterior)

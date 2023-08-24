@@ -46,7 +46,7 @@ public class Reserva {
 	    @Column(name = "valor")
 	    private float valor;
 
-	    @Column(name = "formaPago")
+	    @Column(name = "forma_pago")
 	    private String formaDePago;
 
 

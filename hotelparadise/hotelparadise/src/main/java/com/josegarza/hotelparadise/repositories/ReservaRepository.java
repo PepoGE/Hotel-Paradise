@@ -10,6 +10,6 @@ import com.josegarza.hotelparadise.models.Reserva;
 public interface ReservaRepository extends JpaRepository<Reserva, Long> {
 
     @Query("SELECT MAX(r.id) FROM Reserva r")
-    int findLastReservaId();
+    Integer findLastReservaId();
 	
 }
