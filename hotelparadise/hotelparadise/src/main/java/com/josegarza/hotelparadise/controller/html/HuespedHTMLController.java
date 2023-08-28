@@ -1,4 +1,4 @@
-package com.josegarza.hotelparadise.controller;
+package com.josegarza.hotelparadise.controller.html;
 
 import java.util.List;
 import java.util.Optional;
@@ -23,7 +23,7 @@ import com.josegarza.hotelparadise.services.ReservaService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-public class HuespedController {
+public class HuespedHTMLController {
 
 	@Autowired
 	private HuespedService huespedService;
@@ -122,3 +122,8 @@ public class HuespedController {
 	
 	
 }
+
+
+	
+	
+

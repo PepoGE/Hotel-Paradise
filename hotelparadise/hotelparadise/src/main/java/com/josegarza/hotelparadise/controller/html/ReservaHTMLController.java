@@ -1,4 +1,4 @@
-package com.josegarza.hotelparadise.controller;
+package com.josegarza.hotelparadise.controller.html;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,7 @@ import com.josegarza.hotelparadise.services.ReservaService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-public class ReservaController {
+public class ReservaHTMLController {
 
 	@Autowired
 	private ReservaService reservaService;

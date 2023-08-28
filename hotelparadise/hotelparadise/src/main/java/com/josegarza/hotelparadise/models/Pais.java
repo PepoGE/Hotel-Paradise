@@ -6,6 +6,7 @@ import java.util.Set;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import jakarta.persistence.Column;
@@ -47,6 +48,7 @@ public class Pais {
     @Column(name = "nacionalidad", nullable = false)
     private String nacionalidad;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "pais")
     private Set<Huesped> huespedes;
 

@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
@@ -52,6 +53,7 @@ public class Huesped {
     @Column(name = "telefono", nullable = false, unique = true)
     private String telefono;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "id_pais", nullable = false)
     private Pais pais;

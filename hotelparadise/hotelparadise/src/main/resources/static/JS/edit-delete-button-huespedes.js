@@ -85,7 +85,10 @@ editButton.addEventListener('click', () => {
         }
     }
 
-    document.getElementById("edit-cellphone").value = selectedRowData.telefono;
+    // Split the selectedRowData.telefono to separate the prefix and phone number
+    const [prefix, phoneNumber] = selectedRowData.telefono.split(' ');
+    // Set the value of the edit-cellphone input to the phoneNumber only
+    document.getElementById("edit-cellphone").value = phoneNumber;
 
 
     // Find the select element for reservaId

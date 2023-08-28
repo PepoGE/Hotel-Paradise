@@ -1,4 +1,4 @@
-package com.josegarza.hotelparadise.controller;
+package com.josegarza.hotelparadise.controller.html;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +12,7 @@ import com.josegarza.hotelparadise.models.Pais;
 import com.josegarza.hotelparadise.services.PaisService;
 
 @Controller
-public class PaisController {
+public class PaisHTMLController {
 
 	@Autowired
 	private PaisService paisService;
