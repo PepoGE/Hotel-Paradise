@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/CSS/menu-usuario.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/menu-usuario.css">
     <title>Hotel Paradise</title>
 </head>
 
@@ -19,20 +19,20 @@
     <main>
 
         <section class="options">
-            <img src="../../../../../../Imagenes/logo%20circular%20completo.png" alt="Logo Hotel Paradise" class="logo">
+            <img src="../Imagenes/logo%20circular%20completo.png" alt="Logo Hotel Paradise" class="logo">
             <div class="divider"></div>
             <br>
             <ul>
-                <a th:href=@{/reservas}>
+                <a th:href="@{/reservas}">
                     <li>
-                        <img src="../../../../../../Imagenes/calendar-check.png" alt="Registro de Reservar" class="icon">
+                        <img src="../Imagenes/calendar-check.png" alt="Registro de Reservar" class="icon">
                         Registro de Reservas
                     </li>
                 </a>
-                <a href="">
+                <a th:href="@{/search/reservas}">
                     <li>
-                        <img src="../../../../../../Imagenes/buscar.png" alt="Busqueda" class="icon">
-                        Busqueda
+                        <img src="../Imagenes/buscar.png" alt="Busqueda" class="icon">
+                        Búsqueda de Registros 
                     </li>
                 </a>
             </ul>

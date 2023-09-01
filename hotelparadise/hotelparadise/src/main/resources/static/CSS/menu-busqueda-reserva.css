@@ -7,3 +7,15 @@ a{
     outline: none;
     text-decoration: none;
 }
+
+header a {
+    width: 6rem;
+    height: 6rem;
+    margin-right: auto;
+    background-color: #FAF8F2;
+    text-decoration: none;
+}
+
+header img {
+   background-color: none;
+}

@@ -1,4 +1,4 @@
-package com.josegarza.hotelparadise.controller;
+package com.josegarza.hotelparadise.controller.html;
 
 import java.util.List;
 
@@ -20,7 +20,7 @@ import com.josegarza.hotelparadise.services.PaisService;
 import com.josegarza.hotelparadise.services.ReservaService;
 
 @Controller
-public class SearchController {
+public class SearchHTMLController {
 	
 	@Autowired
 	private ReservaService reservaService;

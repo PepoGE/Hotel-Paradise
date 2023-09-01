@@ -41,6 +41,7 @@ public class ApplicationSecurityConfig {
 		        authorizeRequests
 		            .requestMatchers(
 		                "/login",
+		                "/home",
 		                "/Imagenes/**",
 		                "/CSS/**").permitAll()
 		            .anyRequest().authenticated()
@@ -49,7 +50,7 @@ public class ApplicationSecurityConfig {
                 formLogin
                     .loginPage("/login")
                     .successHandler((request, response, authentication) -> {
-                        response.sendRedirect("/reservas");
+                        response.sendRedirect("/bienvenida");
                     })
                     .permitAll()
             )
