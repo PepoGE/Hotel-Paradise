@@ -12,4 +12,14 @@ public class ApplicationController {
 		return "menu-inicio";
 	}
 	
+	@GetMapping("/login")
+	public String login() {
+		return "menu-login";
+	}
+	
+	@GetMapping("/logout")
+	public String logout() {
+		return "menu-login";
+	}
+	
 }

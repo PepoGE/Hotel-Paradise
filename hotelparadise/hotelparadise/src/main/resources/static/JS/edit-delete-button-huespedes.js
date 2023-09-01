@@ -4,8 +4,7 @@ let selectedRowData = null;
 //Formularios de Editar y Eliminar 
 
 // Obtén una referencia al formulario de Editar
-const reservationForm = document.getElementById("reservation-form");
-const deleteFormContainer = document.querySelector(".delete-form-container");
+const editreservationForm = document.getElementById("reservation-form");
 const editForm = document.querySelector(".edit-form");
 const editFormContainer = document.querySelector(".edit-form-container");
 
@@ -15,6 +14,7 @@ const cancelEditButton = document.getElementById("cancel-button-edit");
 const saveButton = document.getElementById("save-button-edit");
 
 //Botones de Menu Eliminar
+const deleteFormContainer = document.querySelector(".delete-form-container");
 const deleteButton = document.getElementById("delete-button");
 const cancelDeleteButton = document.getElementById("cancel-button-delete");
 const confirmButton = document.getElementById("confirm-button-delete");
@@ -125,7 +125,7 @@ editButton.addEventListener('click', () => {
 });
 
 // Agrega un evento al formulario para interceptar el envío
-reservationForm.addEventListener("submit", function (event) {
+editreservationForm.addEventListener("submit", function (event) {
     const reservaIdSelect = document.getElementById("edit-reservaId");
     const selectedReserva = reservaIdSelect.value.trim(); // Elimina espacios en blanco
 
@@ -134,6 +134,7 @@ reservationForm.addEventListener("submit", function (event) {
         reservaIdSelect.value = -1;
     }
 });
+
 cancelEditButton.addEventListener('click', () => {
     // Hide the edit form with opacity transition
     editFormContainer.style.opacity = 0;

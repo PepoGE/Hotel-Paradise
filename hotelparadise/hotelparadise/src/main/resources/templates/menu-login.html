@@ -9,19 +9,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/CSS/menu-login.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/menu-login.css">
     <title>Hotel Paradise</title>
 </head>
 
 <body>
     <nav class="btn-salir">
-        <img src="../../../../../../Imagenes/circulo-marca-x.png" alt="Boton de cerrar">
+        <img src="../Imagenes/circulo-marca-x.png" alt="Boton de cerrar">
     </nav>
 
     <main>
-        <section class="bloq-login">
+
+
+        <form class="bloq-login" th:action="@{/login}" method="post">
             <div class="logo">
-                <img src="../../../../../../Imagenes/logo%20circular%20completo.png" alt="Logo Hotel Paradise con Borde">
+                <img src="../Imagenes/logo%20circular%20completo.png" alt="Logo Hotel Paradise con Borde">
             </div>
             <br>
             <p class="iniciar-sesion">INICIAR SESIÓN</p>
@@ -29,29 +31,26 @@
                 <div class="usuario"></div>
                 <p>USUARIO</p>
 
-                <input type="text" placeholder="Ingrese su nombre de usuario">
+                <input type="text" placeholder="Ingrese su nombre de usuario" name="username">
 
                 <br>
 
                 <div class="contaseña">
                     <p>CONTRASEÑA</p>
-                    <input type="password" placeholder="************">
+                    <input type="password" placeholder="************" name="password">
                 </div>
             </div>
             <br>
-            <a class="button" href="menu-usuario.html">
-                <button type="submit" >ENTRAR</button> <!-- TIENE QUE CAMBIARSE A UN -->
+                <button type="submit" >ENTRAR</button> 
+        </form>
 
-            </a>
-           
 
-        </section>
         <section class="bloq-img">
             <p>HOTEL</p>
             <img class="img-hotel"
-                src="../../../../../../Imagenes/craiyon_232214_A_hotel_in_a_modern_flat_cartoon_style_using_mostly_blue_palette_colors-removebg-preview.png"
+                src="../Imagenes/craiyon_232214_A_hotel_in_a_modern_flat_cartoon_style_using_mostly_blue_palette_colors-removebg-preview.png"
                 alt="Imagen Bienvenida">
-            <img class="img-stars" src="../../../../../../Imagenes/estrellas-hotel.png" alt="Five stars Image">
+            <img class="img-stars" src="../Imagenes/estrellas-hotel.png" alt="Five stars Image">
         </section>
     </main>
 
