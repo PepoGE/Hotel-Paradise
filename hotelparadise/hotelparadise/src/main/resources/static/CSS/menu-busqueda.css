@@ -124,6 +124,7 @@ button:hover{
 }
 
 .table__header {
+    position: relative;
     padding-left: 1rem;
     width: 100%;
     height: 15%;
@@ -159,6 +160,38 @@ button:hover{
     width: 1.5rem;
     height: 1.5rem;
     margin-right: 1em;
+}
+
+.table__header .export-files{
+    position: absolute;
+    right: 6rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    background-color: #CAF0F8;
+}
+
+.table__header .export-files button{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #caf0f8;
+    margin: 0;
+}
+
+.table__header .export-files button:hover{
+    background-color: #ffffff;
+}
+
+.table__header .export-files img{
+    margin: 0;
 }
 
 
