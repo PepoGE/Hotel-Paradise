@@ -30,6 +30,27 @@ main{
     
 }
 
+.btn-salir {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+
+}
+
+.btn-salir img {
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn-salir img:hover {
+    transform: scale(1.1);
+}
+
 header{
     display: flex;
     justify-content: center;
