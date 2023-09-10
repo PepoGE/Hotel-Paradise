@@ -47,14 +47,14 @@
                     <a class="btn__huespedes"> <img src="../Imagenes/buscar.png">Huéspedes</a>
                 </div>
                 <section class="export-files">
-                    <button type="button" title="Exportar a Word"><img src="../Imagenes/file-word (1).png" alt="Word Icono"></button>
-                    <button type="button" title="Exportar a Excel"><img src="../Imagenes/file-excel (1).png" alt="Excel Icono"></button>
-                    <button type="button" title="Exportar a PDF"><img src="../Imagenes/file-pdf (1).png" alt="PDF Icono"></button>
-                </section>
+                    <button type="button" title="Copiar al Portapapeles" class="export-button"><img src="../Imagenes/portapapeles.png" alt="Portapapeles icono"></button>
+                    <button type="button" title="Exportar a Excel" class="export-button"><img src="../Imagenes/file-excel (1).png" alt="Excel Icono"></button>
+                    <button type="button" title="Exportar a PDF" class="export-button"><img src="../Imagenes/file-pdf (1).png" alt="PDF Icono"></button>               
+                 </section>
             </section>
 
             <section class="table__body">
-                <table>
+                <table id="table-huesped">
                     <thead id="table-header">
                         <tr>
                             <th id="th-id">Id<span class="icon-arrow">&UpArrow;</span></th>
@@ -157,9 +157,18 @@
     <script src="../JS/menu-busqueda.js"></script>
     <script src="../JS/edit-delete-button-huespedes.js"></script>
     <script src="../JS/cerrar-sesion.js"></script>
-    <script src="../JS/jquery.table2excel.js"></script>
-    <script src="../JS/conversor-archivos.js"></script>
 
+
+    <!-- Scripts para exportar -->
+    <script src="../JS/jquery-3.7.1.min.js"></script>
+    <script src="../JS/DataTables/JSZip-3.10.1/jszip.min.js"></script>
+    <script src="../JS/DataTables/pdfmake-0.2.7/pdfmake.min.js"></script>
+    <script src="../JS/DataTables/pdfmake-0.2.7/vfs_fonts.js"></script>
+    <script src="../JS/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="../JS/DataTables/Buttons-2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="../JS/DataTables/Buttons-2.4.2/js/buttons.html5.min.js"></script>
+    <script src="../JS/DataTables/Buttons-2.4.2/js/buttons.print.min.js"></script>
+    <script src="../JS/convertir-archivos-huespedes.js"></script>
 
 </body>
 
