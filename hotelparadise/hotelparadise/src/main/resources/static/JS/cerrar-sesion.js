@@ -7,3 +7,7 @@ function confirmarCerrarSesion() {
         window.location.href = "/logout";
     }
 }
+
+function goBack() {
+    window.history.back();
+}

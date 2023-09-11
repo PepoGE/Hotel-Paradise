@@ -30,24 +30,31 @@ main{
     
 }
 
-.btn-salir {
+.btn-salir, .btn-regresar {
     position: absolute;
     top: 1rem;
-    right: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 2em;
     height: 2em;
     cursor: pointer;
-
 }
 
-.btn-salir img {
+.btn-salir{
+    right: 1rem;
+}
+
+.btn-regresar{
+    left: 1rem;
+}
+
+
+.btn-salir img, .btn-regresar img {
     transition: transform 0.2s ease-in-out;
 }
 
-.btn-salir img:hover {
+.btn-salir img:hover, .btn-regresar img:hover {
     transform: scale(1.1);
 }
 
