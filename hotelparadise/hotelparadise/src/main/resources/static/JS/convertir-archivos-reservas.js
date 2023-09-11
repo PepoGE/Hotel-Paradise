@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleString('es-ES', { timeZone: userTimeZone });
+    const formattedTitle = `Registros de Reservas Hotel Paradise - ${formattedDate}`;
+
     const table = $('#table-reservas').DataTable({
         dom: '',
         buttons: [
@@ -7,21 +12,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 exportOptions: {
                     columns: ':visible'
                 },
-                title: 'Registros de Reservas Hotel Paradise'
+                title: formattedTitle
             },
             {
                 extend: 'excel',
                 exportOptions: {
                     columns: ':visible'
                 },
-                title: 'Registros de Reservas Hotel Paradise'
+                title: formattedTitle
             },
             {
                 extend: 'pdf',
                 exportOptions: {
                     columns: ':visible'
                 },
-                title: 'Registros de Reservas Hotel Paradise'
+                title: formattedTitle
             }
         ],
         language: {
