@@ -242,6 +242,30 @@ input:focus::placeholder{
     color: transparent;
 }
 
+.reservation-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Fira Code', monospace;
+    font-weight: 600;
+    font-size: 3.6vh;
+    border-style: solid;
+    border-color: #75758b;
+    border-bottom-color: #03045E;
+    border-bottom-width: .12em;
+    background-color: rgb(255, 255, 255);
+    border-color: #03045E;    
+    background-color: #e8e8e8;
+}
+
+
+.reservation-input input{
+    border: none;
+    background-color: #e8e8e8;
+    cursor: not-allowed;
+}
+
 a{
     align-self: flex-end;
 }
@@ -291,19 +315,6 @@ button:hover{
     max-width: 80%;
     height: auto;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
